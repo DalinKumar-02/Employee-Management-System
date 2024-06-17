@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ form_action }} Employee{% endblock %}
+{% block content %}
+<h1>{{ form_action }} Employee</h1>
+<form method="POST">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{ employee.name if employee else '' }}" required>
+    <label for="position">Position</label>
+    <input type="text" name="position" value="{{ employee.position if employee else '' }}" required>
+    <label for="department">Department</label>
+    <input type="text" name="department" value="{{ employee.department if employee else '' }}" required>
+    <label for="hire_date">Hire Date</label>
+    <input type="date" name="hire_date" value="{{ employee.hire_date if employee else '' }}" required>
+    <button type="submit">{{ form_action }}</button>
+</form>
+{% endblock %}
